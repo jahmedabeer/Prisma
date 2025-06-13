@@ -14,8 +14,8 @@ async function main() {
 
 
     // Get all users
-    /*const users = await prisma.user.findMany();
-    console.log("All users:", users);*/
+    // const users = await prisma.user.findMany();
+    // console.log("All users:", users);
 
 
     // Create article and associate it with a user
@@ -34,8 +34,8 @@ async function main() {
 
 
     // Get all articles with their authors
-    /*const articles = await prisma.article.findMany();
-    console.log("All articles:", articles);*/
+    const articles = await prisma.article.findMany();
+    console.log("All articles:", articles);
 
     // create a user and article and associate them
     /*const userWithArticle = await prisma.user.create({
@@ -54,12 +54,12 @@ async function main() {
 
 
     // Get all users with their articles
-    const usersWithArticles = await prisma.user.findMany({
+    /*const usersWithArticles = await prisma.user.findMany({
         include: {
             articles: true
         }
     });
-    
+
     // fetch articles with their authors
     usersWithArticles.forEach( user => {
         console.log(
@@ -69,7 +69,29 @@ async function main() {
         user.articles.forEach(article => {
             console.log(`- ${article.title}: ${article.body}`);
         })
+    })*/
+
+
+    // Update data
+    /*const user = await prisma.user.update({
+        where: {
+            id: 1 // Assuming the user with ID 1 exists
+        },
+        data: {
+            name: "Jak Jr."
+        }
     })
+    console.log(user)*/
+
+    
+    // Delete data
+    /*const delArticle = await prisma.article.delete({
+        where: {
+            id: 2 // Assuming the article with ID 1 exists
+        }
+    })
+    console.log(delArticle)*/
+
 }
 
 main()

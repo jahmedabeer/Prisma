@@ -31,3 +31,16 @@ npx prisma init --datasource-provider sqlite
 # Create and apply migration - Syncs your schema with the database
 npx prisma migrate dev --name init
 ```
+
+## Run Your Code
+
+```bash
+# Generate Prisma client - Creates type-safe database client
+npx prisma generate
+
+# Run your TypeScript file - Execute your Prisma code
+npx ts-node index.ts
+
+# Open Prisma Studio - Visual database browser to view your data
+npx prisma studio
+```
