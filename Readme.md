@@ -24,3 +24,10 @@ npm install prisma @prisma/client
 # Initialize Prisma with SQLite - Creates schema.prisma and .env files with SQLite setup (dev only)
 npx prisma init --datasource-provider sqlite
 ```
+
+## Database Migration
+
+```bash
+# Create and apply migration - Syncs your schema with the database
+npx prisma migrate dev --name init
+```

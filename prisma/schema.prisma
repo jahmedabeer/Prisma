@@ -10,3 +10,20 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+// Users table - people who can write articles
+model User {
+  id Int @id @default(autoincrement()) // User number (1, 2, 3...)
+  email String @unique // Email address - no duplicates allowed
+  name String? // Person's name - not required
+  articles Article[] // All articles this user wrote
+}
+
+// Articles table - blog posts written by users
+model Article {
+  id Int @id @default(autoincrement()) // Article number
+  title String // Article headline
+  body String? // Article content - can be empty
+  author User @relation(fields: [authorId], references: [id]) // Who wrote this article
+  authorId Int // Points to the user who wrote it
+}
